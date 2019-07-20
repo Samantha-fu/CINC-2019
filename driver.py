@@ -73,7 +73,6 @@ def fill_null_one_df(df):
     return df[feature_name]
 
 if __name__ == '__main__':
-    if __name__ == '__main__':
     # Parse arguments.
     if len(sys.argv) != 3:
         raise Exception('Include the input and output directories as arguments, e.g., python driver.py input output.')
