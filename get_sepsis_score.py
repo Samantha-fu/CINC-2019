@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.externals import joblib
 def get_sepsis_score(data,model):#current 是array或者df 
     new_array=np.zeros((1,(data.shape[1])*5))
     array_data=np.array(data) 
@@ -14,3 +15,6 @@ def get_sepsis_score(data,model):#current 是array或者df
     score =model.predict_proba(add_data)[:,1]
     label = score > 0.4
     return score,label
+def load_sepsis_model():
+    model =joblib.load('./train56000_model.m')
+    return model
