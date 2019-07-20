@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.externals import joblib
-def get_sepsis_score(data,model):#current 是array或者df 
+def get_sepsis_score(data,model):#current 
     new_array=np.zeros((1,(data.shape[1])*5))
     array_data=np.array(data) 
     if data.shape[0]==1:
