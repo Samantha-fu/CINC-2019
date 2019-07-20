@@ -16,5 +16,5 @@ def get_sepsis_score(data,model):#current 是array或者df
     label = score > 0.4
     return score,label
 def load_sepsis_model():
-    model =joblib.load('./train56000_model.m')
+    model =joblib.load("./train56000_model.m")
     return model
