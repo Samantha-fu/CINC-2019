@@ -1,2 +1,4 @@
-numpy==1.16.2
-scipy==1.2.1
+pandas==0.23.4
+numpy==1.15.4
+xgboost==0.81
+lightgbm==2.2.2
