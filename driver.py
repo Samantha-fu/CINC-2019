@@ -90,11 +90,11 @@ if __name__ == '__main__':
    
     # Load model.
     print('Loading sepsis model...')
-    model =joblib.load('./train56000_model.m')
-    # load_sepsis_model()
+    #model =joblib.load('./train56000_model.m')
+    model=load_sepsis_model()
     print('Predicting sepsis labels...')
     num_files = len(files) #
-    #首read file
+    #read file
     for i, f in enumerate(files):
         print('    {}/{}...'.format(i+1, num_files))
 
@@ -120,5 +120,5 @@ if __name__ == '__main__':
         output_file = os.path.join(output_directory, f)
         save_challenge_predictions(output_file, scores, labels)
 
-    print('Done.')
+    print('Done.fight_fms')
    
