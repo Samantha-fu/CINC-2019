@@ -65,10 +65,10 @@ def fill_null_one_df(df):
     for col in feature_name:
         if col=="SepsisLabel":
             continue
-        if not any(df[col]):#if all null fill mean
-            df[col]=df[col].fillna(AB_features_mean_dict[col],inplace=True)
+        """if not any(df[col]):#if all null fill mean
+            df[col]=df[col].fillna(AB_features_mean_dict[col],inplace=True)"""
         else:
-            df[col].fillna(method="pad",inplace=True)#padding with before data
+            """df[col].fillna(method="pad",inplace=True)#padding with before data"""
             df[col].fillna(AB_features_mean_dict[col],inplace=True) #if first is null fill mean data
     return df[feature_name]
 
