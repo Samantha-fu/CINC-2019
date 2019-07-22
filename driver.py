@@ -2,7 +2,7 @@
 
 from sklearn.externals import joblib
 import numpy as np, os, os.path, sys, argparse
-from collections import defaultdict
+#from collections import defaultdict
 from get_sepsis_score import load_sepsis_model, get_sepsis_score
 AB_features_mean_dict={'AST': 356.2075296108291,
  'Age': 63.0167798510459,
