@@ -112,7 +112,7 @@ if __name__ == '__main__':
         labels = np.zeros(num_rows)
         for t in range(num_rows):
             current_data = data[0:t+1]
-            current_score, current_label = get_sepsis_score(current_data.reshape(1,-1), model)
+            current_score, current_label = get_sepsis_score(current_data, model)
             scores[t] = current_score
             labels[t] = current_label
 
