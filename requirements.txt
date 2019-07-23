@@ -1,4 +1,6 @@
 pandas==0.23.4
 numpy==1.15.4
-xgboost==0.81
+SciPy
+joblib
+scikit-learn
 lightgbm==2.2.2
