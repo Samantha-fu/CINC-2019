@@ -111,17 +111,17 @@ if __name__ == '__main__':
         labels = np.zeros(num_rows)
         for t in range(num_rows):
             current_data = data[0:t+1]
-            print("input to model's shape:",current_data)
-            if current_data.shape[1]==170:
+            print("input to model's shape:",current_data.shape)
+            if current_data.shape[1]==34:
                 print("shape is suit for model,continue")
                 current_score, current_label = get_sepsis_score(current_data, model)
                 scores[t] = current_score
                 labels[t] = current_label
             else:
-                print("the input shape is mot match,check")
+                print("the input shape is not match 34,check")
         # Save results.
         output_file = os.path.join(output_directory, f)
         save_challenge_predictions(output_file, scores, labels)
 
-    print('Done.fight_fms')
+    print('Done:fight_fms')
    
