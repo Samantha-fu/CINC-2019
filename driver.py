@@ -104,17 +104,21 @@ if __name__ == '__main__':
         #fill_data with null  return df
         data=fill_null_one_df(data)
         data=np.array(data.values)
-        
+        print("after fill the data's shape",data.shape)
         #Make predictions.
         num_rows = len(data)
         scores = np.zeros(num_rows)
         labels = np.zeros(num_rows)
         for t in range(num_rows):
             current_data = data[0:t+1]
-            current_score, current_label = get_sepsis_score(current_data, model)
-            scores[t] = current_score
-            labels[t] = current_label
-
+            print("input to model's shape:",current_data)
+            if current_data.shape[1]==170:
+                print("shape is suit for model,continue")
+                current_score, current_label = get_sepsis_score(current_data, model)
+                scores[t] = current_score
+                labels[t] = current_label
+            else:
+                print("the input shape is mot match,check")
         # Save results.
         output_file = os.path.join(output_directory, f)
         save_challenge_predictions(output_file, scores, labels)
