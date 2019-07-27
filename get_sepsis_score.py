@@ -11,9 +11,12 @@ def get_sepsis_score(data,model):#current
     else:
         trend_data=(np.diff(array_data.T))[:,-1].reshape(1,-1)   
         add_data=np.concatenate((array_data[-1].reshape(1,-1),trend_data,array_data.min(axis=0).reshape(1,-1),array_data.max(axis=0).reshape(1,-1),array_data.mean(axis=0).reshape(1,-1)),axis=1)
-    print("add_data.shape:",add_data.shape)    
-    score =model.predict_proba(add_data)[:,1]
-    label = score > 0.4
+    print("add_data.shape:",add_data.shape)
+    if add_data.shape[1]==170:
+        score =model.predict_proba(add_data)[:,1]
+        label = score > 0.4
+   else:
+        print("the shape is not match 170 ,check")
     return score,label
 def load_sepsis_model():
     model =joblib.load("./train56000_model.m")
