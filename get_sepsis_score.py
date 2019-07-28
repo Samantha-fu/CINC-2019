@@ -15,7 +15,7 @@ def get_sepsis_score(data,model):#current
     if add_data.shape[1]==170:
         score =model.predict_proba(add_data)[:,1]
         label = score > 0.4
-   else:
+    else:
         print("the shape is not match 170 ,check")
     return score,label
 def load_sepsis_model():
