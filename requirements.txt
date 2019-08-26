@@ -4,5 +4,6 @@ SciPy
 joblib
 scikit-learn
 lightgbm
-matplotlib
+xgboost
+mlxtend
 
